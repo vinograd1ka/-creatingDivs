@@ -1,0 +1,17 @@
+.btn-defaults {
+    display: inline-block;
+    padding: 10px 6px;
+    background-color: slategray;
+    min-width: 170px;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #484f5b;
+    text-align: center;
+}
+
+
+
+.created-div{
+    margin:5px;
+}
