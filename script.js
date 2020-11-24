@@ -6,7 +6,7 @@
     var background3 = document.getElementById('background3');
     var createButton = document.querySelector('.btn-defaults');
     var deleteButton = document.querySelector('.btn-delete');
-    var container = document.querySelector('.container');
+    var container = document.querySelector('.div-container');
 
     createButton.addEventListener('click', function () {
         for(let i = 0; i < number.value; i++){
@@ -25,9 +25,19 @@
         }
     });
 
+    createButton.onclick = function(e) {
+        document.getElementById("width").value = "";
+        document.getElementById("height").value = "";
+        document.getElementById("number").value = "";
+        document.getElementById("background").value = "";
+        document.getElementById("background3").value = "";
+    }
+
     deleteButton.addEventListener('click', function () {
-        for (var i = 0; i < number.value; i++) {
+        var allDivss = document.querySelectorAll('.created-div');
+        for (var i = 0; i < allDivss.length; i++) {
             var allDivs = document.querySelectorAll('.created-div');
+
             if (i%2===0)allDivs[i].remove()
             //allDivs[i%3==0].remove();
         }
