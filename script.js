@@ -28,7 +28,7 @@
     deleteButton.addEventListener('click', function () {
         for (var i = 0; i < number.value; i++) {
             var allDivs = document.querySelectorAll('.created-div');
-            if (i%3===0)allDivs[i].remove()
+            if (i%2===0)allDivs[i].remove()
             //allDivs[i%3==0].remove();
         }
     });
