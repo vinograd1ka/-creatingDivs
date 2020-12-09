@@ -1,5 +1,4 @@
 (function creatingDivs(){
-
     var number = document.getElementById('number');
     var width = document.getElementById('width');
     var height = document.getElementById('height');
@@ -17,8 +16,16 @@
         for(let i = 0; i < number.value; i++){
             var div = document.createElement("div");
             div.className = "created-div"
-            div.style.width = width.value;
-            div.style.height = height.value;
+
+            if(div.style.width === width.value + 'px' && div.style.height === height.value + 'px'){
+                div.style.width = width.value;
+                div.style.height = height.value;
+            }
+            else{
+                div.style.width = width.value + 'px';
+                div.style.height = height.value + 'px';
+            }
+
             div.style.background = background.value;
             div.innerHTML = i;
 
@@ -57,17 +64,18 @@
          var allDivs = document.querySelectorAll('.created-div');
          var lastElement = allDivs[allDivs.length - 1];
 
-         if(window.getComputedStyle(lastElement).backgroundColor === 'rgb(255,255,255)'){
-              lastElement.style.background = 'rgb(255, 255, 0)'
+        if(window.getComputedStyle(lastElement).backgroundColor !== 'rgb(255, 255, 0)' && window.getComputedStyle(lastElement).backgroundColor !== 'rgb(0, 255, 0)'  &&window.getComputedStyle(lastElement).backgroundColor !== 'rgb(0, 0, 255)') {
+            lastElement.style.background = 'rgb(255, 255, 0)'
 
-          }else if (window.getComputedStyle(lastElement).backgroundColor === 'rgb(255, 255, 0)') {
-              lastElement.style.backgroundColor = 'rgb(0, 255, 0)'
+        }else if (window.getComputedStyle(lastElement).backgroundColor === 'rgb(255, 255, 0)') {
+            lastElement.style.backgroundColor = 'rgb(0, 255, 0)'
 
-          }else if (window.getComputedStyle(lastElement).backgroundColor === 'rgb(0, 255, 0)') {
-              lastElement.style.backgroundColor = 'rgb(0, 0, 255)'
-          }else if (window.getComputedStyle(lastElement).backgroundColor === 'rgb(0, 0, 255)'){
-              lastElement.style.backgroundColor = 'rgb(255, 255, 255)'
-          }
+        }else if (window.getComputedStyle(lastElement).backgroundColor === 'rgb(0, 255, 0)') {
+            lastElement.style.backgroundColor = 'rgb(0, 0, 255)'
+
+        }else if (window.getComputedStyle(lastElement).backgroundColor === 'rgb(0, 0, 255)'){
+            lastElement.style.backgroundColor = 'rgb(255, 255, 255)'
+        }
     });
 
 
