@@ -17,7 +17,7 @@
             var div = document.createElement("div");
             div.className = "created-div"
 
-            if(div.style.width === width.value + 'px' && div.style.height === height.value + 'px'){
+            if(width.value.endsWith('px') && height.value.endsWith('px')){
                 div.style.width = width.value;
                 div.style.height = height.value;
             }
@@ -25,7 +25,7 @@
                 div.style.width = width.value + 'px';
                 div.style.height = height.value + 'px';
             }
-
+    
             div.style.background = background.value;
             div.innerHTML = i;
 
@@ -82,9 +82,6 @@
     changeColorsButton.addEventListener('click', function () {
         var allDivss = document.querySelectorAll('.created-div');
 
-        for(let i = 0; i < allDivss.length; i--) {
-
-        }
     });
 
 })()
