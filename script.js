@@ -17,12 +17,17 @@
             var div = document.createElement("div");
             div.className = "created-div"
 
-            if(width.value.endsWith('px') && height.value.endsWith('px')){
+            if (width.value.endsWith('px') ){
                 div.style.width = width.value;
-                div.style.height = height.value;
             }
             else{
                 div.style.width = width.value + 'px';
+            }
+            if(height.value.endsWith('px')){
+                div.style.height = height.value;
+
+            }
+            else{
                 div.style.height = height.value + 'px';
             }
     
