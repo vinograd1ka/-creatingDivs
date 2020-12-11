@@ -17,13 +17,13 @@
             var div = document.createElement("div");
             div.className = "created-div"
 
-            if (width.value.endsWith('px') ){
+            if (width.value[width.value.length-1] === 'x' && width.value[width.value.length-2] === 'p'){
                 div.style.width = width.value;
             }
             else{
                 div.style.width = width.value + 'px';
             }
-            if(height.value.endsWith('px')){
+            if(height.value[height.value.length-1] === 'x' && height.value[height.value.length-2] === 'p'){
                 div.style.height = height.value;
 
             }
@@ -39,10 +39,13 @@
                 div.style.background = background3.value;
                 div.classList.add("third-element")
             }
+
         }
     });
 
     createButton.onclick = function(e) {
+        console.log(width.value[width.value.length-1]);
+
         document.getElementById("width").value = "";
         document.getElementById("height").value = "";
         document.getElementById("number").value = "";
